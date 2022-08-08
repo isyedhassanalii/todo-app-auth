@@ -1,0 +1,20 @@
+<app-topbar></app-topbar>
+<section class="tasks">
+    <header class="tasks-header">
+      <h2 class="tasks-title">Tasks</h2>
+      <a href="/" class="tasks-lists">Lists</a>
+    </header>
+    <fieldset class="tasks-list" *ngFor="let data of todoData">
+      <label class="tasks-list-item">
+        <input type="checkbox" name="task_1" value="1" class="tasks-list-cb">
+        <span class="tasks-list-desc">Name: {{data.userName}}</span>
+        <br/>
+        <br/>
+        <span class="tasks-list-desc">Task: {{data.title}}</span>
+        <br/>
+        <br/>
+        <span class="tasks-list-desc">Satus: {{stausValue}}</span>
+        <hr/>
+      </label>
+    </fieldset>
+  </section>

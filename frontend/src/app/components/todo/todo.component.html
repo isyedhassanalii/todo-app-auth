@@ -1,0 +1,16 @@
+<app-topbar></app-topbar>
+<section class="tasks">
+    <header class="tasks-header">
+      <h2 class="tasks-title">Tasks</h2>
+      <a href="/" class="tasks-lists">Lists</a>
+    </header>
+    <fieldset class="tasks-list" *ngFor="let data of todoData">
+      <label class="tasks-list-item">
+        <span class="tasks-list-desc">Task: {{data.title}}</span><br/>
+        <span class="tasks-list-desc">Status: {{stausValue}}</span>
+      </label>
+      <a class="button" routerLink="/update/{{data.todoId}}">Update Status</a>
+     
+      <hr/>
+    </fieldset>
+  </section>

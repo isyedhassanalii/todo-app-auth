@@ -1,0 +1,41 @@
+
+  <app-topbar></app-topbar>
+  <form class="sign-up" name="form" *ngIf="!submitted">
+    <h1 class="sign-up-title">Assign Task</h1>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="sign-up-input"
+          id="title"
+          required
+          [(ngModel)]="task.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="status">status</label>
+        <select id="UserSelector"  class="sign-up-input" style="width: 100%;"  #Status
+        (change)='onStatusChange(Status.value)'>
+          <option  value="0">InProgress</option>
+          <option  value="1">Active</option>
+          <option  value="2">Pending</option>
+          <option  value="3">Done</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="status">Users</label>
+      <select id="UserSelector" class="sign-up-input" style="width: 100%;"  #User
+      (change)='onUserSelected(User.value)'>
+        <option *ngFor="let data of userData" value={{data.id}}>{{data.name}}</option>
+      </select>
+    </div>
+       
+     
+    <input type="submit" value="submit" (click)="saveTodo()" class="sign-up-button">
+    
+  </form>
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newTodo()">Add</button>
+  </div>

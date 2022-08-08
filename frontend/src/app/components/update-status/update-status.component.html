@@ -1,0 +1,23 @@
+<app-topbar></app-topbar>
+<section class="tasks">
+    <header class="tasks-header">
+      <h2 class="tasks-title">Tasks</h2>
+      <a href="/" class="tasks-lists">Lists</a>
+    </header>
+    <fieldset class="tasks-list">
+    
+      <div class="tasks-list-item">
+        <label for="status">Change Status</label>
+       
+        <select class="sign-up-input"  style="width: 100%;" #Status
+        (change)='onStatusChange(Status.value)'>
+          <option value="0">InProgress</option>
+          <option value="1">Active</option>
+          <option value="2">Pending</option>
+          <option value="3">Done</option>
+        </select>
+      </div>
+     <button (click)="updateTodo()" class="button">Submit</button>
+      <hr/>
+    </fieldset>
+  </section>
